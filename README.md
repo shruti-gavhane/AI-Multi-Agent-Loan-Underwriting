@@ -238,7 +238,39 @@ Stores:
 - Approval history
 
 ---
+---
 
+## 1. Loan Application Form
+
+```text
+<img width="1803" height="847" alt="Screenshot 2026-06-15 225448" src="https://github.com/user-attachments/assets/968f8cbb-1ef4-4aad-ac23-7c540144f346" />
+
+```
+---
+
+## 2. Loan Decision Output
+
+```text
+<img width="1893" height="767" alt="Screenshot 2026-06-15 225254" src="https://github.com/user-attachments/assets/57304897-ccd4-4cb3-91e1-6b3a17529cf6" />
+<img width="1817" height="591" alt="Screenshot 2026-06-15 225320" src="https://github.com/user-attachments/assets/e6da8f3d-e487-4ca1-b21e-059e8397c5b4" />
+<img width="1876" height="791" alt="Screenshot 2026-06-15 225354" src="https://github.com/user-attachments/assets/c1af9733-36b7-494f-9cd6-f789a6b216cc" />
+
+```
+
+---
+## 3. Loan Decision Chatbot
+
+```text
+<img width="1892" height="627" alt="image" src="https://github.com/user-attachments/assets/6d19177b-5dde-451f-9457-90f08c71ac84" />
+```
+
+---
+## 4. Generated Sanction Letter PDF
+
+```text
+<img width="1878" height="831" alt="image" src="https://github.com/user-attachments/assets/102556a9-a56c-4bfa-be76-8bd408bd7f5b" />
+
+```
 ---
 # ⚙️ Installation
 
