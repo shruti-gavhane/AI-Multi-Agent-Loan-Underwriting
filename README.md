@@ -456,9 +456,9 @@ END
 
 AI/ML Engineer | Full Stack Developer | Generative AI Enthusiast
 
-**GitHub:** https://github.com/yourusername
+**GitHub:** https://github.com/shruti-gavhane
 
-**LinkedIn:** Add your LinkedIn profile
+**LinkedIn:** https://www.linkedin.com/in/shruti-gavhane-44994729a/
 
 ---
 
