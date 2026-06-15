@@ -1,274 +1,256 @@
-# 🚀 AI-Powered Loan Underwriting & Approval System
+# 🚀 Multi-Agent Loan Approval System
 
-An intelligent multi-agent loan underwriting platform that automates loan eligibility assessment, risk analysis, document verification, credit evaluation, fraud detection, and sanction letter generation using Large Language Models (LLMs), LangGraph orchestration, and external financial APIs.
+An AI-powered multi-agent loan approval and underwriting system built using **LangGraph**, **FastAPI**, **Streamlit**, **SQLite**, and **LLMs** to automate customer verification, sales consultation, underwriting evaluation, risk analysis, EMI calculation, and sanction letter generation.
 
-The system simulates the workflow of a real-world bank loan officer by combining multiple specialized AI agents that collaborate to make transparent and explainable loan approval decisions.
+This project simulates a real-world financial institution’s loan processing pipeline by using multiple specialized agents that collaborate to make explainable and structured lending decisions.
 
 ---
 
 # 📌 Problem Statement
 
-Traditional loan approval processes are often:
+Traditional loan approval systems face several challenges:
 
-- Time-consuming
-- Prone to manual errors
-- Difficult to scale
-- Inconsistent in risk assessment
-- Dependent on extensive human intervention
+- Manual verification is slow and inefficient
+- Underwriting lacks consistency
+- Risk evaluation is often delayed
+- Sales qualification is disconnected from underwriting
+- Decision transparency is poor
 
-Financial institutions require a system that can:
+Banks and financial institutions need:
 
-✔ Verify customer information automatically
+✔ Faster loan application processing  
+✔ Automated applicant verification  
+✔ Better underwriting consistency  
+✔ Dynamic EMI calculation  
+✔ Risk-based approval logic  
+✔ Automated sanction letter generation  
+✔ Centralized application storage  
 
-✔ Analyze financial health
-
-✔ Evaluate creditworthiness
-
-✔ Detect fraudulent applications
-
-✔ Generate underwriting reports
-
-✔ Produce sanction/rejection letters
-
-✔ Provide explainable approval decisions
-
-This project addresses these challenges using a multi-agent AI workflow that automates the complete underwriting lifecycle.
+This project solves these problems using a multi-agent architecture.
 
 ---
 
-# 🏗️ Architecture Diagram
+# 🏗️ System Architecture
 
-## Overall System Workflow
+## Workflow Diagram
 
 ```text
-Applicant
-    │
-    ▼
-Loan Application API
-    │
-    ▼
-────────────────────────────────────
-       LangGraph Workflow
-────────────────────────────────────
-
-    │
-    ├──► Customer Verification Agent
-    │
-    ├──► Financial Analysis Agent
-    │
-    ├──► Credit Assessment Agent
-    │
-    ├──► Fraud Detection Agent
-    │
-    ├──► Risk Assessment Agent
-    │
-    └──► Loan Decision Agent
-
-                │
-                ▼
-
-        Underwriting Report
-
-                │
-                ▼
-
-    Approval / Rejection Decision
-
-                │
-                ▼
-
-    Sanction Letter Generator
-
-                │
-                ▼
-
-          SQLite Database
+Customer Application
+        │
+        ▼
+Sales Agent
+(Collects applicant info)
+        │
+        ▼
+Verification Agent
+(Validates applicant data)
+        │
+        ▼
+Underwriting Agent
+(Analyzes loan eligibility)
+        │
+        ▼
+Risk Agent
+(Assigns risk level)
+        │
+        ▼
+Decision Engine
+(Approve / Reject)
+        │
+        ▼
+PDF Generator
+(Sanction Letter)
+        │
+        ▼
+SQLite Database Storage
 ```
 
 ---
 
-# 🤖 Agent Architecture Diagram
+# 🤖 Agent Architecture
 
 ```text
-                 Loan Application
-                         │
-                         ▼
-
-               ┌────────────────┐
-               │  Supervisor     │
-               │     Agent       │
-               └────────────────┘
-                        │
-
- ┌────────────┬─────────────┬──────────────┬──────────────┐
-
- ▼            ▼             ▼              ▼
-
-Verification  Financial   Credit       Fraud
-Agent         Agent       Agent        Agent
-
-      └──────────┬──────────┘
-                 ▼
-
-          Risk Agent
-
-                 ▼
-
-        Decision Agent
-
-                 ▼
-
-      Letter Generation Agent
+                   Loan Application
+                           │
+                           ▼
+                ┌────────────────────┐
+                │   LangGraph Flow   │
+                └────────────────────┘
+                           │
+        ┌──────────────────┼──────────────────┐
+        ▼                  ▼                  ▼
+   Sales Agent      Verification Agent   Underwriting Agent
+                                                │
+                                                ▼
+                                           Risk Agent
+                                                │
+                                                ▼
+                                         Final Decision
+                                                │
+                                                ▼
+                                      Sanction Letter Generator
 ```
-
----
-
-# 🛠️ Tech Stack
-
-## Backend
-
-- Python
-- FastAPI
-- LangGraph
-- LangChain
-- SQLite
-
-## AI Models
-
-- Llama 3.1 8B Instant (Groq)
-- Llama 3.1 8B Instruct (OpenRouter)
-- Llama 3.1 8B Turbo (Together AI)
-
-## External APIs
-
-- Groq API
-- OpenRouter API
-- Together AI API
-- NumVerify API
-- Abstract API
-- FRED API
-- Alpha Vantage API
-
-## Development Tools
-
-- Postman
-- Git
-- GitHub
-
----
-
-# ✨ Features
-
-## 🔍 Customer Verification
-
-- Identity validation
-- Email verification
-- Phone number validation
-- Applicant profile checking
-
-## 💰 Financial Analysis
-
-- Income assessment
-- Expense analysis
-- Debt-to-income ratio calculation
-- Cash flow evaluation
-
-## 📊 Credit Assessment
-
-- Creditworthiness analysis
-- Repayment capability evaluation
-- Credit score interpretation
-
-## 🚨 Fraud Detection
-
-- Suspicious application detection
-- Data consistency validation
-- Risk flag generation
-
-## ⚠️ Risk Assessment
-
-Applicants are categorized into:
-
-- Low Risk
-- Medium Risk
-- High Risk
-
-based on combined financial, credit, and fraud analysis.
-
-## 🧠 Explainable AI Decisions
-
-Provides reasoning behind:
-
-- Loan approval
-- Loan rejection
-- Risk score assignment
-- Recommended loan amount
-
-## 📄 Automated Underwriting Report
-
-Generates detailed reports including:
-
-- Applicant profile
-- Financial summary
-- Credit analysis
-- Risk evaluation
-- Final recommendation
-
-## 📝 Sanction Letter Generation
-
-Automatically creates:
-
-- Loan Approval Letters
-- Loan Rejection Letters
 
 ---
 
 # 📂 Project Structure
 
 ```text
-loan-underwriting-system/
+MULTI-AGENT-LOAN-APPROVAL-AI-SYSTEM/
 
-│
 ├── agents/
-│   ├── verification_agent.py
-│   ├── financial_agent.py
-│   ├── credit_agent.py
-│   ├── fraud_agent.py
 │   ├── risk_agent.py
-│   └── decision_agent.py
+│   ├── sales_agent.py
+│   ├── underwriting_agent.py
+│   └── verification_agent.py
 │
-├── workflow/
-│   └── langgraph_workflow.py
+├── services/
+│   ├── external_data.py
+│   ├── llm_service.py
+│   └── repository.py
 │
-├── database/
-│   └── loan_applications.db
+├── utils/
+│   ├── emi_calculator.py
+│   └── pdf_generator.py
 │
-├── reports/
-│   ├── underwriting_reports/
-│   └── sanction_letters/
-│
-├── api/
-│   └── routes.py
-│
+├── graph_builder.py
+├── init_db.py
+├── loan.db
 ├── main.py
-│
+├── schemas.py
+├── streamlit_app.py
 ├── requirements.txt
-│
+├── .env
 └── README.md
 ```
 
 ---
 
+# 🛠 Tech Stack
 
+## Backend
+
+- Python
+- FastAPI
+- LangGraph
+- SQLite
+
+## Frontend
+
+- Streamlit
+
+## AI/LLM
+
+- LangChain
+- Groq API
+- OpenRouter API
+- Together AI
+
+## Utilities
+
+- ReportLab (PDF Generation)
+- Custom EMI Calculator
+
+---
+
+# ✨ Features
+
+## 📞 Sales Agent
+
+Responsible for:
+
+- Collecting applicant information
+- Initial lead qualification
+- Loan requirement understanding
+- Customer onboarding
+
+---
+
+## ✅ Verification Agent
+
+Performs:
+
+- Identity verification
+- Contact verification
+- Data validation
+- Document consistency checks
+
+---
+
+## 📝 Underwriting Agent
+
+Handles:
+
+- Loan eligibility analysis
+- Income evaluation
+- Debt assessment
+- Repayment capability analysis
+- Approval recommendation
+
+---
+
+## ⚠️ Risk Agent
+
+Evaluates:
+
+- Applicant risk profile
+- Financial stability
+- Loan repayment risk
+- Risk categorization
+
+Risk levels:
+
+- Low Risk
+- Medium Risk
+- High Risk
+
+---
+
+## 💸 EMI Calculator
+
+Calculates:
+
+- Monthly EMI
+- Total payable amount
+- Interest amount
+- Loan repayment schedule
+
+---
+
+## 📄 PDF Sanction Letter Generator
+
+Generates:
+
+- Loan approval letter
+- Loan rejection letter
+- Loan terms summary
+
+---
+
+## 🗄 Database Storage
+
+Stores:
+
+- Applicant details
+- Loan status
+- Risk category
+- Underwriting results
+- Approval history
+
+---
+
+---
 # ⚙️ Installation
 
 ## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/loan-underwriting-system.git
+git clone https://github.com/yourusername/multi-agent-loan-approval-ai-system.git
 
-cd loan-underwriting-system
+cd multi-agent-loan-approval-ai-system
 ```
+
+---
 
 ## Create Virtual Environment
 
@@ -276,19 +258,21 @@ cd loan-underwriting-system
 python -m venv venv
 ```
 
-### Activate Environment
+### Activate
 
-#### Windows
+Windows:
 
 ```bash
 venv\Scripts\activate
 ```
 
-#### Linux / Mac
+Linux/Mac:
 
 ```bash
 source venv/bin/activate
 ```
+
+---
 
 ## Install Dependencies
 
@@ -296,9 +280,11 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Configure Environment Variables
+---
 
-Create a `.env` file:
+## Setup Environment Variables
+
+Create `.env`
 
 ```env
 GROQ_API_KEY=your_key
@@ -306,26 +292,36 @@ GROQ_API_KEY=your_key
 OPENROUTER_API_KEY=your_key
 
 TOGETHER_API_KEY=your_key
-
-ABSTRACT_API_KEY=your_key
-
-NUMVERIFY_API_KEY=your_key
-
-FRED_API_KEY=your_key
-
-ALPHA_VANTAGE_API_KEY=your_key
 ```
 
-## Run Application
+---
+
+## Initialize Database
+
+```bash
+python init_db.py
+```
+
+---
+
+## Run FastAPI Server
 
 ```bash
 uvicorn main:app --reload
 ```
 
-Server will start on:
+Server:
 
 ```text
 http://127.0.0.1:8000
+```
+
+---
+
+## Run Streamlit Frontend
+
+```bash
+streamlit run streamlit_app.py
 ```
 
 ---
@@ -335,35 +331,15 @@ http://127.0.0.1:8000
 ## Submit Loan Application
 
 ```http
-POST /loan/apply
-```
-
-### Request Body
-
-```json
-{
-  "name": "John Doe",
-  "age": 30,
-  "income": 75000,
-  "loan_amount": 500000,
-  "credit_score": 760
-}
+POST /apply-loan
 ```
 
 ---
 
-## Get Application Status
+## Get Loan Status
 
 ```http
-GET /loan/{application_id}
-```
-
----
-
-## Generate Underwriting Report
-
-```http
-POST /loan/report
+GET /loan-status/{id}
 ```
 
 ---
@@ -371,39 +347,43 @@ POST /loan/report
 ## Generate Sanction Letter
 
 ```http
-POST /loan/sanction-letter
+POST /generate-sanction-letter
 ```
 
 ---
 
-# 🗄️ Database Schema
+## Calculate EMI
 
-## Applications Table
-
-| Field | Type |
-|---------|---------|
-| id | INTEGER |
-| applicant_name | TEXT |
-| income | REAL |
-| credit_score | INTEGER |
-| loan_amount | REAL |
-| risk_level | TEXT |
-| decision | TEXT |
-
-## Reports Table
-
-| Field | Type |
-|---------|---------|
-| report_id | INTEGER |
-| application_id | INTEGER |
-| report_content | TEXT |
+```http
+POST /calculate-emi
+```
 
 ---
 
-# 🔄 LangGraph Workflow
+# 🗄 Database Schema
+
+## Loan Applications Table
+
+| Field | Type |
+|---|---|
+| id | INTEGER |
+| applicant_name | TEXT |
+| income | REAL |
+| loan_amount | REAL |
+| tenure | INTEGER |
+| risk_level | TEXT |
+| approval_status | TEXT |
+
+---
+
+# 🔄 Agent Flow
 
 ```text
 START
+
+ ↓
+
+Sales Agent
 
  ↓
 
@@ -411,27 +391,27 @@ Verification Agent
 
  ↓
 
-Financial Agent
+Underwriting Agent
 
  ↓
 
-Credit Agent
+Risk Agent
 
  ↓
 
-Fraud Detection Agent
+EMI Calculation
 
  ↓
 
-Risk Assessment Agent
+Decision Generation
 
  ↓
 
-Decision Agent
+PDF Generation
 
  ↓
 
-Sanction Letter Generator
+Database Storage
 
  ↓
 
@@ -442,42 +422,31 @@ END
 
 # 📈 Future Improvements
 
-- RAG-based policy document retrieval
-- Real credit bureau integration
-- OCR document verification
-- Aadhaar/PAN verification
+- OCR-based document verification
 - Bank statement analysis
-- Vector database integration
-- Human-in-the-loop approval workflow
-- Dashboard with analytics
-- Multi-bank underwriting policies
-- AWS deployment
-- Docker containerization
-- Kubernetes orchestration
-- Loan recommendation engine
-- Real-time fraud monitoring
+- Credit bureau integration
+- Aadhaar/PAN verification
+- Fraud detection model
+- Multi-bank policy engine
+- Real-time market rate integration
+- Human-in-the-loop approval
+- RAG for loan policy retrieval
+- Deployment on AWS/GCP
+- Docker support
 
 ---
 
 # 🎯 Key Highlights
 
-✅ Multi-Agent AI Architecture
-
-✅ LangGraph Workflow Orchestration
-
-✅ LLM-Powered Underwriting
-
-✅ Automated Risk Assessment
-
-✅ Fraud Detection Pipeline
-
-✅ Explainable Loan Decisions
-
-✅ SQLite Data Persistence
-
-✅ Auto Generated Sanction Letters
-
-✅ Production-Ready API Design
+✅ Multi-Agent Loan Processing Pipeline  
+✅ LangGraph Workflow Orchestration  
+✅ Automated Loan Underwriting  
+✅ Explainable Approval Logic  
+✅ Dynamic EMI Calculation  
+✅ PDF Sanction Letter Generation  
+✅ Streamlit Dashboard  
+✅ SQLite Data Persistence  
+✅ Production-ready FastAPI APIs  
 
 ---
 
@@ -487,10 +456,10 @@ END
 
 AI/ML Engineer | Full Stack Developer | Generative AI Enthusiast
 
-**GitHub:** https://github.com/shruti-gavhane
+**GitHub:** https://github.com/yourusername
 
-**LinkedIn:** https://www.linkedin.com/in/shruti-gavhane-44994729a/
+**LinkedIn:** Add your LinkedIn profile
 
 ---
 
-⭐ If you found this project useful, don't forget to star the repository!
+⭐ If you found this project useful, consider giving it a star!
