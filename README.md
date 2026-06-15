@@ -239,7 +239,6 @@ Stores:
 
 ---
 ---
-
 ## 1. Loan Application Form
 
 <img alt="Loan Application Form" src="https://github.com/user-attachments/assets/e26b6afd-8ed1-4d09-af25-8f486e9fb58b" />
@@ -259,19 +258,17 @@ Stores:
 <img alt="Underwriting Analysis" src="https://github.com/user-attachments/assets/c1af9733-36b7-494f-9cd6-f789a6b216cc" />
 
 ---
+
 ## 3. Loan Decision Chatbot
 
-```text
-<img width="1892" height="627" alt="image" src="https://github.com/user-attachments/assets/6d19177b-5dde-451f-9457-90f08c71ac84" />
-```
+<img alt="Loan Decision Chatbot" src="https://github.com/user-attachments/assets/6d19177b-5dde-451f-9457-90f08c71ac84" />
 
 ---
+
 ## 4. Generated Sanction Letter PDF
 
-```text
-<img width="1878" height="831" alt="image" src="https://github.com/user-attachments/assets/102556a9-a56c-4bfa-be76-8bd408bd7f5b" />
+<img alt="Generated Sanction Letter PDF" src="https://github.com/user-attachments/assets/102556a9-a56c-4bfa-be76-8bd408bd7f5b" />
 
-```
 ---
 # ⚙️ Installation
 
