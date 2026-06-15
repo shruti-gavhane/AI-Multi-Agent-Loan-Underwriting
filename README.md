@@ -242,19 +242,21 @@ Stores:
 
 ## 1. Loan Application Form
 
-```text
-![Loan Form](https://github.com/user-attachments/assets/968f8cbb-1ef4-4aad-ac23-7c540144f346)
-```
+<img alt="Loan Application Form" src="https://github.com/user-attachments/assets/e26b6afd-8ed1-4d09-af25-8f486e9fb58b" />
+
 ---
 
 ## 2. Loan Decision Output
 
-```text
-<img width="1893" height="767" alt="Screenshot 2026-06-15 225254" src="https://github.com/user-attachments/assets/57304897-ccd4-4cb3-91e1-6b3a17529cf6" />
-<img width="1817" height="591" alt="Screenshot 2026-06-15 225320" src="https://github.com/user-attachments/assets/e6da8f3d-e487-4ca1-b21e-059e8397c5b4" />
-<img width="1876" height="791" alt="Screenshot 2026-06-15 225354" src="https://github.com/user-attachments/assets/c1af9733-36b7-494f-9cd6-f789a6b216cc" />
+<img alt="Loan Approval Decision" src="https://github.com/user-attachments/assets/57304897-ccd4-4cb3-91e1-6b3a17529cf6" />
 
-```
+<br><br>
+
+<img alt="Risk Assessment Output" src="https://github.com/user-attachments/assets/e6da8f3d-e487-4ca1-b21e-059e8397c5b4" />
+
+<br><br>
+
+<img alt="Underwriting Analysis" src="https://github.com/user-attachments/assets/c1af9733-36b7-494f-9cd6-f789a6b216cc" />
 
 ---
 ## 3. Loan Decision Chatbot
