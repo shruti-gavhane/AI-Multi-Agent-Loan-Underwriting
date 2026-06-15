@@ -268,6 +268,7 @@ Stores:
 ## 4. Generated Sanction Letter PDF
 
 <img alt="Generated Sanction Letter PDF" src="https://github.com/user-attachments/assets/102556a9-a56c-4bfa-be76-8bd408bd7f5b" />
+<img alt="Generated Sanction Letter PDF" src="https://github.com/user-attachments/assets/971f85d0-e5bb-4283-9576-2bb68553cb05" />
 
 ---
 # ⚙️ Installation
