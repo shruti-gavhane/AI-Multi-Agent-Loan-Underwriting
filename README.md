@@ -243,8 +243,7 @@ Stores:
 ## 1. Loan Application Form
 
 ```text
-<img width="1803" height="847" alt="Screenshot 2026-06-15 225448" src="https://github.com/user-attachments/assets/968f8cbb-1ef4-4aad-ac23-7c540144f346" />
-
+![Loan Form](https://github.com/user-attachments/assets/968f8cbb-1ef4-4aad-ac23-7c540144f346)
 ```
 ---
 
